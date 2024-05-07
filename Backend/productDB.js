@@ -3,9 +3,10 @@ const mongoose = require("mongoose"); // Add this line to import mongoose
 
 const connectDb = require("./db/connect");
 
-const Product = require("./models/product");
+//const Product = require("./models/product");
 
 const BusData = require("./Bus.json"); // Assuming your JSON file is named Bus.json
+const BusRoute = require("./models/product");
 
 const start = async () => {
     try {
@@ -13,7 +14,7 @@ const start = async () => {
         await connectDb(process.env.MONGODB_URL);
 
         console.log("Inserting BusData into the database...");
-        await Product.insertMany(BusData);
+        await BusRoute.insertMany(BusData);
 
         console.log("BusData inserted successfully.");
     } catch (error) {

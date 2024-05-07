@@ -1,7 +1,8 @@
-const Product = require("../models/product");
+const BusRoute = require("../models/product");
+//const Product = require("../models/product");
 
 const getallbuslists = async(req,res) =>{
-    const myData = await Product.find({});
+    const myData = await BusRoute.find({});
 
 res.status(200).json({myData});
 };
